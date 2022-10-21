@@ -1,4 +1,4 @@
-IMAGE_NAME=al5ter/tmc-gitops-play
+IMAGE_NAME=ali5ter/tmc-gitops-play
 IMAGE_VERSION=0.0.1
 IMAGE=$(IMAGE_NAME):$(IMAGE_VERSION)
 SOURCE_BRANCH=v0.0.1
