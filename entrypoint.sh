@@ -2,7 +2,7 @@
 
 export TMC_API_TOKEN=$1
 echo "TMC Login with TMC_API_TOKEN '${TMC_API_TOKEN}'"
-tmc login --no-configure --name gitops
+tmc login --stg-unstable --no-configure --name tmc-unstable
 
 echo "Move to /github/workspace"
 cd /github/workspace

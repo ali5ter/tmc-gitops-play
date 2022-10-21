@@ -6,11 +6,11 @@ jobs:
     name: TMC Gitops apply
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 2
       - name: Tanzu Mission Control Apply
-        uses: bmoussaud/tmc-gitops-demo@v0.0.3
+        uses: ali5ter/tmc-gitops-play@v0.0.1
         id: apply
         with:          
           tmc-api-key: ${{ secrets.TMC_API_TOKEN}}      

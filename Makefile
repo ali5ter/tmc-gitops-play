@@ -1,13 +1,13 @@
-IMAGE_NAME=bmoussaud/tmc-gitops-demo
-IMAGE_VERSION=0.0.3
+IMAGE_NAME=al5ter/tmc-gitops-play
+IMAGE_VERSION=0.0.1
 IMAGE=$(IMAGE_NAME):$(IMAGE_VERSION)
-SOURCE_BRANCH=v0.0.3
+SOURCE_BRANCH=v0.0.1
 
 build:
 	docker build \
 	--label org.label-schema.build-date=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
 	--label org.label-schema.vcs-ref=`git rev-parse --short HEAD` \
-	--label org.label-schema.vcs-url="https://github.com:bmoussaud/tmc-gitops-demo.git" \
+	--label org.label-schema.vcs-url="https://github.com:al5ter/tmc-gitops-play.git" \
 	--label org.label-schema.version="$(SOURCE_BRANCH)" \
 	--label org.label-schema.schema-version="1.0" \
 	-f . \
