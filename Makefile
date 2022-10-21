@@ -1,7 +1,7 @@
 IMAGE_NAME=ali5ter/tmc-gitops-play
-IMAGE_VERSION=0.0.1
+IMAGE_VERSION=0.0.2
 IMAGE=$(IMAGE_NAME):$(IMAGE_VERSION)
-SOURCE_BRANCH=v0.0.1
+SOURCE_BRANCH=v0.0.2
 
 build:
 	docker build \

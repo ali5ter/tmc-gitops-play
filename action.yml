@@ -7,6 +7,6 @@ inputs:
     required: true       
 runs:
   using: 'docker'  
-  image: 'docker://docker.io/ali5ter/tmc-gitops-play:0.0.1'
+  image: 'docker://docker.io/ali5ter/tmc-gitops-play:0.0.2'
   args:
     - ${{ inputs.tmc-api-key }}
