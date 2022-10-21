@@ -7,7 +7,7 @@ build:
 	docker build \
 	--label org.label-schema.build-date=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
 	--label org.label-schema.vcs-ref=`git rev-parse --short HEAD` \
-	--label org.label-schema.vcs-url="https://github.com:al5ter/tmc-gitops-play.git" \
+	--label org.label-schema.vcs-url="https://github.com:ali5ter/tmc-gitops-play.git" \
 	--label org.label-schema.version="$(SOURCE_BRANCH)" \
 	--label org.label-schema.schema-version="1.0" \
 	-f . \
