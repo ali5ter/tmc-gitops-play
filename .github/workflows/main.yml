@@ -10,7 +10,7 @@ jobs:
         with:
           fetch-depth: 2
       - name: Tanzu Mission Control Apply
-        uses: ali5ter/tmc-gitops-play@0.0.1
+        uses: ali5ter/tmc-gitops-play@v0.0.1
         id: apply
         with:          
           tmc-api-key: ${{ secrets.TMC_API_TOKEN}}      
