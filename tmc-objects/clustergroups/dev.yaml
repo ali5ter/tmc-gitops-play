@@ -1,11 +1,11 @@
 fullName:
-  name: bmoussaud-dev
+  name: alb-gitops-dev
 meta:  
-  description: My Cluster Group for developpers.
+  description: alister testing again. Please delete if needed
   labels: 
-    owner: bmoussaud
-    country: france
-    env: dev04
+    owner: bowena
+    country: usa
+    env: dev
 type:
   kind: ClusterGroup
   package: vmware.tanzu.manage.v1alpha1.clustergroup
