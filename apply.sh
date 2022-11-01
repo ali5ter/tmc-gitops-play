@@ -38,8 +38,9 @@ apply_state () {
         then
             tmc clustergroup delete ${name}
         else
-            op=$(tmc clustergroup get ${name})
-            if [[ $? -eq 0 ]]
+            # op=$(tmc clustergroup get ${name})
+            # if [[ $? -eq 0 ]]
+            if tmc clustergroup get ${name} &> /dev/null
             then
                 echo "Already exists. Updating."
                 tmc clustergroup update ${name} -f ${1}
@@ -72,7 +73,7 @@ apply_state () {
                 version=$(cat cluster-info.json | jq '.meta.resourceVersion' | sed 's/\"//g' )
                 #sed -e "s/meta:/meta:\\n  resourceVersion: $version/g" ${1} > tmpfile.yaml
                 ./cluster_patch_yaml.sh ${1} ${version} tmpfile.yaml
-                echo $(cat tmpfile.yaml)                
+                cat tmpfile.yaml           
                 tmc cluster update ${name} -m ${mgmt} -p ${prov} -f tmpfile.yaml -v 9                
                 rm tmpfile.yaml
                 rm cluster-info.json
@@ -124,8 +125,9 @@ apply_state () {
         then
             tmc workspace delete ${name}
         else
-            op=$(tmc workspace get ${name})
-            if [[ $? -eq 0 ]]
+            # op=$(tmc workspace get ${name})
+            # if [[ $? -eq 0 ]]
+            if tmc workspace get ${name} &> /dev/null
             then
                 echo "Already exists. Updating."
                 tmc workspace update ${name} -f ${1}
@@ -150,8 +152,9 @@ apply_state () {
         then
             tmc ${command} ${type} delete ${name} --workspace-name ${parent_name}
         else
-            op=$(tmc ${command} ${type} get ${name} --workspace-name ${parent_name})
-            if [[ $? -eq 0 ]]
+            # op=$(tmc ${command} ${type} get ${name} --workspace-name ${parent_name})
+            # if [[ $? -eq 0 ]]
+            if tmc ${command} ${type} get ${name} --workspace-name ${parent_name} &> /dev/null
             then
                 echo "Already exists. Updating."
                 tmc ${command} ${type} update ${name} --workspace-name ${parent_name} -f ${1}
@@ -176,8 +179,9 @@ apply_state () {
         then
             tmc ${command} ${type} delete ${name} --workspace-name ${parent_name}
         else
-            op=$(tmc ${command} ${type} get ${name} --workspace-name ${parent_name})
-            if [[ $? -eq 0 ]]
+            # op=$(tmc ${command} ${type} get ${name} --workspace-name ${parent_name})
+            # if [[ $? -eq 0 ]]
+            if tmc ${command} ${type} get ${name} --workspace-name ${parent_name} &> /dev/null
             then
                 echo "Already exists. Updating."
                 tmc ${command} ${type} update ${name} --workspace-name ${parent_name} -f ${1}
@@ -200,8 +204,9 @@ apply_state () {
         then
             tmc ${command} iam delete ${workspaceName}
         else
-            op=$(tmc ${command} iam get-policy ${workspaceName})
-            if [[ $? -eq 0 ]]
+            # op=$(tmc ${command} iam get-policy ${workspaceName})
+            # if [[ $? -eq 0 ]]
+            if tmc ${command} iam get-policy ${workspaceName} &> /dev/null
             then
                 echo "Already exists. Updating."
                 sed -n '/roleBindings/,$p' ${1} > tmpfile.yaml
