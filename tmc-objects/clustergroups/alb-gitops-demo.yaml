@@ -1,0 +1,12 @@
+fullName:
+  name: alb-gitops-demo
+meta:  
+  description: 🦄 Alister testing again. Please delete if needed.
+  labels: 
+    owner: bowena
+    generator: gitops-demo-repo
+    env: dev
+type:
+  kind: ClusterGroup
+  package: vmware.tanzu.manage.v1alpha1.clustergroup
+  version: v1alpha1

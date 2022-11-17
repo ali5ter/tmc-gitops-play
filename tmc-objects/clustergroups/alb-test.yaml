@@ -1,10 +1,10 @@
 fullName:
-  name: alb-gitops-dev
+  name: alb-test
 meta:  
-  description: 🦄 Alister testing again. Please delete if needed
+  description: 🦄 Alister testing again. Please delete if needed.
   labels: 
     owner: bowena
-    method: gitops-demo-repo
+    generator: gitops-demo-repo
     env: dev
 type:
   kind: ClusterGroup
