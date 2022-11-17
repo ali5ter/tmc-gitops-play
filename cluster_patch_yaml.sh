@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-set -x 
+#set -x 
 
 echo "
 meta:
   resourceVersion: ${2}
 " > /tmp/sample.yaml
 
-yq ea '. as $item ireduce ({}; . * $item )' $1  /tmp/sample.yaml > ${3}
+#shellcheck disable=SC2016
+yq ea '. as $item ireduce ({}; . * $item )' "$1"  /tmp/sample.yaml > "${3}"
