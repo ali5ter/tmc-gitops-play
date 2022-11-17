@@ -1,10 +1,10 @@
 fullName:
   name: alb-gitops-dev
 meta:  
-  description: alister testing again. Please delete if needed
+  description: 🦄 alister testing again. Please delete if needed
   labels: 
     owner: bowena
-    country: usa
+    method: gitops-demo-repo
     env: dev
 type:
   kind: ClusterGroup
