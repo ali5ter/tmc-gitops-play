@@ -4,7 +4,7 @@ meta:
   description: 🦄 Alister testing again. Please delete if needed.
   labels: 
     owner: bowena
-    generator: gitops-demo-repo
+    generatedFrom: gitops-demo-repo
     env: dev
 type:
   kind: ClusterGroup
