@@ -213,6 +213,7 @@ dump_files () {
 
 #show files in the current dir
 ls -l
+git config --global --add safe.directory /github/workspace
 git status
 
 while read -r line; do apply_state "$line"; done < <(git diff --name-only HEAD HEAD~1 | grep yaml)
