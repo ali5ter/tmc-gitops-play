@@ -3,7 +3,7 @@ fullName:
 meta:  
   description: 🦄 alister testing again. Please delete if needed
   labels: 
-    owner: alister
+    owner: bowena
     method: gitops-demo-repo
     env: dev
 type:
