@@ -7,6 +7,9 @@ tmc login --stg-unstable --no-configure --name tmc-unstable
 echo "» Move to /github/workspace"
 cd /github/workspace || exit
 
+echo "» Fix git permissions"
+git config --global --add safe.directory /github/workspace
+
 echo "» Start TMC Apply -------------------------------------------------------------"
 /usr/src/app/apply.sh 
 echo "» End TMC Apply ---------------------------------------------------------------"
