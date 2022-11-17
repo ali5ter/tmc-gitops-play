@@ -192,7 +192,7 @@ apply_state () {
     version=$(parse_value_for "version")
     package=$(parse_value_for "package")
     name=$(parse_value_for "name")
-    echo "${kind}/${version}/${package}/${name}"
+    # echo "${kind}/${version}/${package}/${name}"
 
     case $kind in
         "ClusterGroup")     type_cluster_group;;
