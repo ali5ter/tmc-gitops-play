@@ -1,6 +1,6 @@
 # action.yml
 name: 'Tanzu Mission Control Apply'
-description: 'tmcctl apply'
+description: 'Run a script to apply declarative YAML files using the TMC CLI'
 inputs:
   tmc-api-key:  # id of input
     description: 'TMC API Key'

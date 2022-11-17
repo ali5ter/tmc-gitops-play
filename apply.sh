@@ -211,7 +211,10 @@ dump_files () {
     apply_state "$file" dump
 }
 
-while read -r line; do apply_state "$line"; done < <(git diff --name-only HEAD HEAD^ | grep yaml)
+#show files in the current dir
+ls -l
+git status
 
-#while read -r line; do dump_files "$line"; done < <(git diff --name-only HEAD HEAD^ | grep yaml)
+while read -r line; do apply_state "$line"; done < <(git diff --name-only HEAD HEAD~1 | grep yaml)
 
+#while read -r line; do dump_files "$line"; done < <(git diff --name-only HEAD HEAD~1 | grep yaml)
