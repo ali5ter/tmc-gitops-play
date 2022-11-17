@@ -7,6 +7,6 @@ meta:
     generatedFrom: gitops-demo-repo
     env: dev
 type:
-  kind: ClusterGroup
-  package: vmware.tanzu.manage.v1alpha1.clustergroup
+  kind: Workspace
+  package: vmware.tanzu.manage.v1alpha1.workspace
   version: v1alpha1
