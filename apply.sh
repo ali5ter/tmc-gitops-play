@@ -79,6 +79,24 @@ apply_state () {
         fi
     }
 
+    type_eks_cluster() {
+        local credential_name region
+        credential_name=$(parse_value_for "credentialName")
+        region=$(parse_value_for "region")
+        if [[ delete -eq 1 ]]; then
+            echo "» Deleting cluster $name"
+            tmc ekscluster delete "$name" --credential-name "$credential_name" --region "$region"
+        else
+            if tmc ekscluster list --credential-name "$credential_name" --region "$region" | grep "$name" &> /dev/null; then
+                echo "» Updating cluster $name"      
+                tmc ekscluster update "$name" --credential-name "$credential_name" --region "$region" -f "$file" -v 9
+            else
+                echo "» Creating cluster $name"
+                tmc ekscluster create -f "$file"
+            fi
+        fi
+    }
+
     type_namespace() {
         local cluster_name mgmt_cluster provisioner
         if [[ delete -eq 1 ]]; then
@@ -197,6 +215,7 @@ apply_state () {
     case $kind in
         "ClusterGroup")     type_cluster_group;;
         "Cluster")          type_cluster;;
+        "EksCluster")       type_eks_cluster;;
         "Namespace")        type_namespace;;
         "Workspace")        type_workspace;;
         "ImagePolicy")      type_image_policy;;
