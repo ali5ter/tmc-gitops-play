@@ -1,20 +1,20 @@
-typeMeta:
+type:
   kind: Template
-  package: vmware.olympus.v1alpha.template
-  version: v1alpha
+  package: vmware.tanzu.manage.v1alpha1.clustergroup
+  version: v1alpha1
 fullName:
   name: default
-objectMeta:
+meta:
   description: "A default ClusterGroup object."
 engine: GO_TEXT
 data: |
-  typeMeta:
-      kind: ClusterGroup
-      package: vmware.olympus.v1alpha.clustergroup
-      version: v1alpha
+  type:
+    kind: ClusterGroup
+    package: vmware.tanzu.manage.v1alpha1.clustergroup
+    version: v1alpha1
   fullName:
-      name: "{{ .Name }}"
-  objectMeta:
+    name: "{{ .Name }}"
+  meta:
     annotations:
     {{- range $k, $v := .Annotations }}
       "{{ $k }}": "{{ $v }}"
@@ -28,26 +28,32 @@ input:
   - field: Name
     short: "n"
     default: "$generateName"
-    type: string
+    schema:
+      type: string
     immutable: true
-    description: Name to apply to the resource 
+    description: Name to apply to the resource
   - field: Description
     short: d
-    type: string
+    schema:
+      type: string
     description: description of the role.
     paths:
-    - objectMeta.description
+      - meta.description
   - field: Labels
     short: l
-    type: map
-    items: string
+    schema:
+      type: map
+      items:
+        type: string
     description: Labels to apply to the resource.
     paths:
-    - objectMeta.labels
+      - meta.labels
   - field: Annotations
     short: z
-    type: map
-    items: string
+    schema:
+      type: map
+      items:
+        type: string
     description: Annotations to apply to the resource
     paths:
-    - objectMeta.annotations
+      - meta.annotations
