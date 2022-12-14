@@ -202,7 +202,7 @@ apply_state () {
         "ImagePolicy")      type_image_policy;;
         "NetworkPolicy")    type_network_policy;;
         "IAMPolicy")        type_iam_policy;;
-        *)                  echo "Unknown kind: $kind";;
+        "Template"|*)       echo "Unknown kind: $kind";;
     esac
 }
 
