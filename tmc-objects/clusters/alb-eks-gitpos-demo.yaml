@@ -10,7 +10,7 @@ spec:
   clusterGroupName: alb-gitops-demo
   config:
     roleArn: arn:aws:iam::822188526077:role/control-plane.1310825678767850332.eks.tmc.cloud.vmware.com
-    version: 1.23
+    version: "1.23"
     vpc:
       enablePrivateAccess: true
       subnetIds:
@@ -22,7 +22,7 @@ spec:
   - info:
       name: default-node-pool
     spec:
-      roleArn: "{{ getVal "NodepoolRoleArn" }}"
+      roleArn: arn:aws:iam::822188526077:role/control-plane.1310825678767850332.eks.tmc.cloud.vmware.com
       subnetIds:
       - subnet-040d303cd461fd307
       - subnet-00eab65567a9bfec9
