@@ -4,7 +4,7 @@ type:
   version: v1alpha1
 fullName:
   credentialName: alb-eks-unstable
-  name: alb-eks-gitops-demo
+  name: alb-eks-test-gitops-demo
   region: us-west-2
 spec:
   clusterGroupName: alb-gitops-demo
