@@ -1,3 +1,7 @@
+type:
+  kind: Workspace
+  package: vmware.tanzu.manage.v1alpha1.workspace
+  version: v1alpha1
 fullName:
   name: alb-test
 meta:  
@@ -6,7 +10,3 @@ meta:
     owner: bowena
     generatedFrom: gitops-demo-repo
     env: dev
-type:
-  kind: Workspace
-  package: vmware.tanzu.manage.v1alpha1.workspace
-  version: v1alpha1

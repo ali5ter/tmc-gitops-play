@@ -1,0 +1,19 @@
+type:
+  kind: Cluster
+  package: vmware.tanzu.manage.v1alpha1.cluster
+  version: v1alpha1
+fullName:
+  managementClusterName: attached
+  provisionerName: attached
+  name: alb-local-dev-1
+meta:
+  description: 🦄 Alister testing again. Please delete if needed.
+  labels: 
+    owner: bowena
+    generatedFrom: gitops-demo-repo
+    env: dev
+spec:
+  clusterGroupName: alb-test
+
+# Need to perform `tmc cluster get alb-local-dev` to get the installerLink value
+# Then perform `kubectl apply -f <installerLink>` to install the TMC agent
