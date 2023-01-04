@@ -4,7 +4,7 @@ type:
   version: v1alpha1
 fullName:
   credentialName: alb-eks-unstable
-  name: alb-eks-dev
+  name: alb-eks-dev-1
   region: us-west-2
 meta:
   description: 🦄 Alister testing again. Please delete if needed.

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -x 
+#set -x 
 
 apply_state () {
     local file="$1"
@@ -89,7 +89,7 @@ apply_state () {
         else
             if tmc ekscluster list --credential-name "$credential_name" --region "$region" | grep "$name" &> /dev/null; then
                 echo "» Updating cluster $name"      
-                tmc ekscluster update "$name" --credential-name "$credential_name" --region "$region" -f "$file" -v 9
+                tmc ekscluster update --credential-name "$credential_name" --region "$region" -f "$file" -v 9
             else
                 echo "» Creating cluster $name"
                 tmc ekscluster create -f "$file"
