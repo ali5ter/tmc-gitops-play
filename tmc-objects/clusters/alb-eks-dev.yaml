@@ -12,6 +12,7 @@ meta:
     owner: bowena
     generatedFrom: gitops-demo-repo
     env: dev
+    foo: bar
 spec:
   clusterGroupName: alb-test
   config:
