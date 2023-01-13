@@ -1,0 +1,30 @@
+type:
+  kind: EksCluster
+  package: vmware.tanzu.manage.v1alpha1.ekscluster
+  version: v1alpha1
+fullName:
+  credentialName: alb-eks-unstable
+  name: alb-eks-gitops-demo
+  region: us-west-2
+meta:
+  description: 🦄 Alister testing again. Please delete if needed.
+  labels: 
+    owner: bowena
+    generatedFrom: gitops-demo-repo
+    env: dev
+spec:
+  clusterGroupName: alb-gitops-demo
+  config:
+    roleArn: arn:aws:iam::822188526077:role/control-plane.1310825678767850332.eks.tmc.cloud.vmware.com
+    tags:
+      owner: bowena
+      generatedFrom: gitops-demo-repo
+      env: dev
+    version: "1.23"
+    vpc:
+      enablePrivateAccess: true
+      subnetIds:
+      - subnet-040d303cd461fd307
+      - subnet-00eab65567a9bfec9
+      - subnet-0806ade2debb5e84d
+      - subnet-0cfd1106afaa5ceeb
