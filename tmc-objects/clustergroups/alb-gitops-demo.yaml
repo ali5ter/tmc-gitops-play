@@ -5,7 +5,7 @@ type:
 fullName:
   name: alb-gitops-demo
 meta:
-  description: 🦄 Alister testing again. Please delete if needed.
+  description: 🦄 Alister testing again. Please delete if needed
   labels: 
     owner: bowena
     generatedFrom: gitops-demo-repo
